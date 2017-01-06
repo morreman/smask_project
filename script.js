@@ -55,11 +55,10 @@ function updateList(songlist) {
             "<button value='8' type='button'id='btn8" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-warning'>8</button>" +
             "<button value='10' type='button' id='btn10" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-primary'>10</button>" +
             "<button value='12' type='button' id='btn12" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-danger'>12</button>" +
-            "<div class='form-group col-sm-2 pull-right'><label for='usr'>Other:</label><input type='text' class='form-control' id='usr'>" +
-            "<button type='button' class='point_button btn btn-info'>Enter</button></div></div></div></div>");
+            "<div class='form-group col-sm-2 pull-right'><label for='other_points'>Other:</label><input type='text' data-song='" + songlist[i].artist + "' class='form-control' id='other_points'>" +
+            "<button type='enter' class='point_button btn btn-info'>Enter</button></div></div></div></div>");
     }
 }
-
 
 function submitPoints(songlist) {
     for (var i = 0; i < songlist.length; i++) {
@@ -73,11 +72,18 @@ addEventListener("click", function() {
     var updateList = JSON.parse(localStorage.getItem("songs"));
     if (event.target.type == "button") {
         var clicked_song = event.target.getAttribute('data-song');
-    for (var i = 0; i < updateList.length; i++) {
-        if (clicked_song == updateList[i].artist) {
-            updateList[i].currentpoints = parseInt(event.target.value);
+        for (var i = 0; i < updateList.length; i++) {
+            if (clicked_song == updateList[i].artist) {
+                updateList[i].currentpoints = parseInt(event.target.value);
+            }
+        }
+    } else if (event.target.type == 'enter') {
+        var clicked_song = event.target.getAttribute('data-song');
+        for (var i = 0; i < updateList.length; i++) {
+            if (clicked_song == updateList[i].artist) {
+                updateList[i].currentpoints = parseInt($('#other_points').val());
+            }
         }
     }
     localStorage.setItem("songs", JSON.stringify(updateList));
-}
 });
