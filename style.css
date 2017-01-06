@@ -15,10 +15,14 @@
   padding: 10px;
 }
 
-#canvas{
+.songlist{
   border: #666 1px solid;
 }
 
 .point_button{
   margin: 5px;
+}
+
+#usr{
+  padding: 10px;
 }
