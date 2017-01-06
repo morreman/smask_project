@@ -1,6 +1,20 @@
 #songdiv{
   font-family: 'Cormorant Garamond', serif;
+  background-color: cyan;
+  margin: 100px;
 }
 #pointdiv{
   font-family: 'Cormorant Garamond', serif;
+}
+
+.first_wrapper {
+  padding: 40px;
+}
+
+.point_radio {
+  padding: 10px;
+}
+
+#canvas{
+  border: #666 1px solid;
 }
