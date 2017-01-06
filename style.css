@@ -18,3 +18,7 @@
 #canvas{
   border: #666 1px solid;
 }
+
+.point_button{
+  margin: 5px;
+}

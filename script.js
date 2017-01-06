@@ -40,6 +40,12 @@ function addSongToJson() {
 function updateList(songlist) {
     for (var i = 0; i < songlist.length; i++) {
         $("#songlist").append("<div id='songlistsong'" + i + "><div id ='text' class='row'><div class='col-md-10'><h1>" +
-            songlist[i].songname + "</h1></div><div id = 'buttons' class='row'><div class='col-md-10'><button type='button' class='btn btn-default'>Default</button></div></div></div>");
+            songlist[i].songname + "</h1></div><div id = 'buttons' class='row'>" +
+            "<div class='col-sm-12'><button type='button' class='point_button btn btn-default'>Default</button>" +
+            "<button type='button' class='point_button btn btn-info'>Info</button>" +
+            "<button type='button' class='point_button btn btn-success'>Success</button>" +
+            "<button type='button' class='point_button btn btn-warning'>Warning</button>" +
+            "<button type='button' class='point_button btn btn-primary'>Primary</button>" +
+            "<button type='button' class='point_button btn btn-danger'>Danger</button></div></div></div>");
     }
 }
