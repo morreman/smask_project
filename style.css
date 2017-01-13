@@ -5,6 +5,8 @@
 }
 #pointdiv{
   font-family: 'Cormorant Garamond', serif;
+  font-size: 100px;
+  float: right;
 }
 
 .first_wrapper {
@@ -25,4 +27,12 @@
 
 #usr{
   padding: 10px;
+}
+#pointdiv>h1{
+  font-size: 100px;
+}
+
+#apa{
+  padding: 0;
+  margin: 0;
 }
