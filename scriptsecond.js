@@ -1,6 +1,5 @@
 $(document).ready(
     function() {
-      var canvas = $('#canvas');
         setInterval(function() {
             $(".wrapper").empty();
             var songs = JSON.parse(localStorage.getItem("songs"));
