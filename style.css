@@ -28,10 +28,16 @@
 #usr{
   padding: 10px;
 }
+
 #pointdiv>h1{
   font-size: 100px;
 }
 #apa{
   padding: 0;
   margin: 0;
+
+
+.glyphicon-ok{
+  color: green;
+  font-size: 25px;
 }
