@@ -1,10 +1,10 @@
 #songdiv{
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cinzel', serif;
   background-color: cyan;
   margin: 100px;
 }
 #pointdiv{
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cinzel', serif;
   font-size: 100px;
   float: right;
 }
@@ -31,7 +31,6 @@
 #pointdiv>h1{
   font-size: 100px;
 }
-
 #apa{
   padding: 0;
   margin: 0;

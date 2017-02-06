@@ -17,11 +17,13 @@ function addSongToJson() {
     if (JSON.parse(localStorage.getItem("songs") == null)) {
         songn = $("#songname").val();
         artist = $("#artistname").val();
+        startnbr = $("#startnbr").val();
         song = {
             "songname": songn,
             "artist": artist,
             "points": 0,
-            "currentpoints": 0
+            "currentpoints": 0,
+            "startnbr": startnbr
         };
         songs.push(song);
         localStorage.setItem("songs", JSON.stringify(songs));
@@ -29,24 +31,27 @@ function addSongToJson() {
         songs = JSON.parse(localStorage.getItem("songs"));
         songn = $("#songname").val();
         artist = $("#artistname").val();
+        startnbr = $("#startnbr").val();
         song = {
             "songname": songn,
             "artist": artist,
             "points": 0,
-            "currentpoints": 0
+            "currentpoints": 0,
+            "startnbr": startnbr
         };
         console.log(song);
         songs.push(song);
         localStorage.setItem("songs", JSON.stringify(songs));
         $("#songname").val("");
         $("#artistname").val("");
+        $("#startnbr").val("");
     }
 }
 
 function updateList(songlist) {
     $("#songlist").empty();
     for (var i = 0; i < songlist.length; i++) {
-        $("#songlist").append("<div id='songlistsong" + i + "'><div id ='text' class='row'><div class='col-md-12'><h1>" +
+        $("#songlist").append("<div id='songlistsong" + i + "'><div id ='text' class='row'><div class='col-md-12'><h1>" + songlist[i].startnbr + ". " +
             songlist[i].songname + "</h1></div><div id = 'buttons' class='row'>" +
             "<div class='col-sm-8'><button value='2' type='button' id='btn2" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-default'>2</button>" +
             "<button value='4'  onclick='this.disabled = true' type='button' id='btn4" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-info'>4</button>" +
