@@ -23,7 +23,9 @@ function addSongToJson() {
             "artist": artist,
             "points": 0,
             "currentpoints": 0,
-            "startnbr": startnbr
+            "startnbr": startnbr,
+            "jumpanimate": false,
+            "fadeanimate": false
         };
         songs.push(song);
         localStorage.setItem("songs", JSON.stringify(songs));
@@ -39,7 +41,9 @@ function addSongToJson() {
             "artist": artist,
             "points": 0,
             "currentpoints": 0,
-            "startnbr": startnbr
+            "startnbr": startnbr,
+            "jumpanimate": false,
+            "fadeanimate": false
         };
         console.log(song);
         songs.push(song);
@@ -70,6 +74,7 @@ function submitPoints(songlist) {
     for (var i = 0; i < songlist.length; i++) {
         songlist[i].points = songlist[i].points + songlist[i].currentpoints;
         songlist[i].currentpoints = 0;
+        songlist[0].fadeanimate = true;
     }
     localStorage.setItem("songs", JSON.stringify(songlist));
     $('.other_points').val("");
@@ -83,6 +88,7 @@ addEventListener("click", function(e) {
         for (var i = 0; i < updateList.length; i++) {
             if (clicked_song == updateList[i].artist) {
                 updateList[i].currentpoints = parseInt(event.target.value);
+                updateList[i].jumpanimate = true;
             }
         }
         counter++;

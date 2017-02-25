@@ -8,7 +8,11 @@
   font-size: 100px;
   float: right;
 }
-
+.pointdivcur{
+  font-family: 'Cinzel', serif;
+  font-size: 100px;
+  float: right;
+}
 .first_wrapper {
   padding: 40px;
 }
@@ -30,6 +34,9 @@
 }
 
 #pointdiv>h1{
+  font-size: 100px;
+}
+.pointdivcur>h1{
   font-size: 100px;
 }
 #apa{
