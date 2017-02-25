@@ -1,17 +1,26 @@
 #songdiv{
   font-family: 'Cinzel', serif;
-  background-color: cyan;
-  margin: 100px;
+  margin:20px;
+  border-radius: 70px 20px 140px 20px;
+  background-color: #861A51;
 }
 #pointdiv{
   font-family: 'Cinzel', serif;
   font-size: 100px;
   float: right;
+  background-color: #861A51;
 }
 .pointdivcur{
   font-family: 'Cinzel', serif;
   font-size: 100px;
   float: right;
+  border-radius: 70px 0px 0px 20px;
+}
+.pointdivfull{
+  font-family: 'Cinzel', serif;
+  font-size: 100px;
+  float: right;
+  border-radius: 0px 20px 140px 0px;
 }
 .first_wrapper {
   padding: 40px;
@@ -28,7 +37,6 @@
 .point_button{
   margin: 5px;
 }
-
 #usr{
   padding: 10px;
 }
@@ -39,12 +47,10 @@
 .pointdivcur>h1{
   font-size: 100px;
 }
-#apa{
-  padding: 0;
-  margin: 0;
-
-
 .glyphicon-ok{
   color: green;
   font-size: 25px;
+}
+.wrapper{
+  background-color: #690537;
 }
