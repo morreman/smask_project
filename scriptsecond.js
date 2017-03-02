@@ -16,8 +16,8 @@ $(document).ready(
                     }
                 }
                 if (songs[0].fadeanimate){
-                    $(".pointdivcur").addClass("animated fadeOutRight");
-                    $(".pointdivfull").addClass("animated fadeOutRight");
+                    $(".pointdivcur").addClass("animated bounceIn");
+                    $(".pointdivfull").addClass("animated bounceIn");
                     songs[0].fadeanimate = false;
                 }
                 localStorage.setItem('songs', JSON.stringify(songs));
