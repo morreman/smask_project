@@ -15,10 +15,11 @@ function() {
                     for (var j = 0; j < songs.length; j++) {
                         if (index == songs[j].points ) {
                             $(".wrapper").append("<div id='apa' class='row'><div id=songdiv><div class='col-sm-6' id='song" + j + "'><h1>" + songs[j].startnbr + ". " + songs[j].songname + "</h1><div class='row col-sm-12' id='artist" + j + "'><h3>" + songs[j].artist +
-                                "</h3></div></div><div class='col-sm-2 pointdivfull' id='pointdiv'><h1>" + songs[j].points + "</h1></div><div class='col-sm-2 pointdivcur' id='pointdiv'><h1>" + songs[j].currentpoints + "</h1></div>" +
-                                "</div></div><hr>");
-                            $("#song" + j).css('background-color', '#861A51');
+                                "</h3></div></div><div id='shadow'><div class='col-sm-2 pointdivfull dansk' id='pointdiv'><h1>" + songs[j].points + "</h1></div><div class='col-sm-2 pointdivcur dansk' id='pointdiv'><h1>" + songs[j].currentpoints + "</h1></div>" +
+                                "</div></div></div></div><hr>");
+                            $("#song" + j).css('background-image', 'url("gold.jpg")');
                             $("#song" + j).css('border-radius', '70px 20px 140px 20px');
+                            //$("#song" + j).css('box-shadow', '10px 10px 5px #888888');
                         }
                     }
 

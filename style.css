@@ -1,26 +1,32 @@
 #songdiv{
   font-family: 'Cinzel', serif;
-  margin:20px;
+  margin-top: 5px;
+  margin:3px;
   border-radius: 70px 20px 140px 20px;
-  background-color: #861A51;
+  background-color: green;
+  background-image: url("gold.jpg");
 }
 #pointdiv{
   font-family: 'Cinzel', serif;
   font-size: 100px;
   float: right;
-  background-color: #861A51;
+
 }
 .pointdivcur{
   font-family: 'Cinzel', serif;
   font-size: 100px;
   float: right;
   border-radius: 70px 0px 0px 20px;
+  background-image: url("gold.jpg");
+  background-position: 700px 0px;
 }
 .pointdivfull{
   font-family: 'Cinzel', serif;
   font-size: 100px;
   float: right;
   border-radius: 0px 20px 140px 0px;
+  background-image: url("gold.jpg");
+  background-position: 500px 0px;
 }
 .first_wrapper {
   padding: 40px;
@@ -52,5 +58,8 @@
   font-size: 25px;
 }
 .wrapper{
-  background-color: #690537;
+  padding: 10px;
+  background-image: url('logo.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
