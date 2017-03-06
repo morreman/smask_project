@@ -10,6 +10,8 @@ $("#submit").click(function(e) {
 $("#submitpoints").click(function(e) {
     songlist = JSON.parse(localStorage.getItem("songs"));
     submitPoints(songlist);
+    $(".hint").hide();
+
     e.preventDefault();
 });
 
@@ -31,6 +33,7 @@ function addSongToJson() {
         localStorage.setItem("songs", JSON.stringify(songs));
         $("#songname").val("");
         $("#artistname").val("");
+        $("#startnbr").val("");
     } else {
         songs = JSON.parse(localStorage.getItem("songs"));
         songn = $("#songname").val();
@@ -57,17 +60,21 @@ function addSongToJson() {
 function updateList(songlist) {
     $("#songlist").empty();
     for (var i = 0; i < songlist.length; i++) {
-        $("#songlist").append("<div id='songlistsong" + i + "'><div id ='text' class='row'><div class='col-md-12'><h1>" + songlist[i].startnbr + ". " +
-            songlist[i].songname + "</h1></div><div id = 'buttons' class='row'>" +
-            "<div class='col-sm-6 row'><button value='2' type='button' id='btn2" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-default'>2</button>" +
+        $("#songlist").append("<div class='col-sm-6' id='songlistsong" + i + "'><div id ='text' class='row'><div class='col-md-12'><h1 class='col-sm-10'>" + songlist[i].startnbr + ". " +
+            songlist[i].songname + "</h1><h3 class='hint col-sm-1' id='klickpoint" + i + "'></h3></div><div id = 'buttons' class=''>" +
+            "<div class='col-sm-12'><button value='2' type='button' id='btn2" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-default'>2</button>" +
             "<button value='4' type='button' id='btn4" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-info'>4</button>" +
             "<button value='6' type='button'id='btn6" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-success'>6</button>" +
             "<button value='8' type='button'id='btn8" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-warning'>8</button>" +
             "<button value='10' type='button' id='btn10" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-primary'>10</button>" +
             "<button value='12' type='button' id='btn12" + songlist[i].artist + "' data-song='" + songlist[i].artist + "' class='point_button btn btn-danger'>12</button>" +
-            "<div class='col-xs-4 pull-right '><label class='lblOther' for='other_points'>Other:</label><input type='text' data-song='" + songlist[i].artist + "' class='other_points form-control'>" +
-            "<button value='other' id='" + songlist[i].artist + "' type='reset' class='point_button btn btn-info'>Enter</button></div></div></div></div>");
+            "<label class='lblOther' for='other_points'>Other:</label><div class='col-sm-3 pull-right otherInput'><input type='text' data-song='" + songlist[i].artist + "' class='other_points form-control'></div>" +
+            "<button value='other' id='" + songlist[i].artist + "' type='reset' class='btn btn-info'>Enter</button></div></div></div>");
+        $('#songlistsong' + i).css('border-style', 'outset');
+        $('#songlistsong' + i).css('margin', '0px');
+        $('#songlistsong' + i).css('padding', '20px');
     }
+
 }
 
 function submitPoints(songlist) {
@@ -93,9 +100,14 @@ addEventListener("click", function(e) {
         }
         localStorage.setItem("songs", JSON.stringify(updateList));
     } else if (event.target.type == 'reset') {
-        var clicked_song_points = event.target.parentNode;
-        var lbl = $(clicked_song_points).children().first();
-        clicked_song_points = $(clicked_song_points).children().eq(1).val();
+        console.log(event.target.parentNode.childNodes[6]); //
+        var textfield = event.target.parentNode.childNodes[7].firstChild.value;//
+        var clicked_song_points = textfield; // ANTAL POÄNG.
+        var temp = event.target.parentNode;
+        var lbl = $(temp).children().last();
+        console.log(lbl);
+        // var lbl = event.target.parentNode.childNodes[6];
+
         var clicked_song = event.target.id;
         for (var i = 0; i < updateList.length; i++) {
             if (clicked_song == updateList[i].artist) {
@@ -106,6 +118,11 @@ addEventListener("click", function(e) {
             }
         }
         localStorage.setItem("songs", JSON.stringify(updateList));
+    }
+    if (event.target.className.split(" ")[0] == "point_button") {
+        var myh3tag = event.target.parentNode.parentNode.parentNode.firstChild.lastChild;
+        myh3tag.innerHTML = event.target.value;
+        $(myh3tag).fadeIn();
     }
     e.preventDefault();
 });

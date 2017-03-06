@@ -14,35 +14,36 @@
 
 <body>
     <div class="form-group first_wrapper">
-      <button id="hideformbrn" type="button" onclick="changeform()" class="btn btn-danger">Dölj formulär</button>
-      <button id="update_page" type="button" onclick="updatePage()" class="btn btn-info">Uppdatera sida</button>
+        <div class="">
+            <button id="hideformbrn" type="button" onclick="changeform()" class="btn btn-danger">Dölj formulär</button>
+            <button id="update_page" type="button" onclick="updatePage()" class="btn btn-info">Uppdatera sida</button>
+        </div>
         <div class="hide_form">
-            <form action="">
-                <div class="col-sm-6">
-                    <div class="col-md-12">
-                      <label for="songname">Sång</label>
-                        <input type="text" placeholder="ex. Fångad av en stormvind" class="form-control" id="songname" required="true">
+            <form action="POST" class="form-group">
+                <div class="col-sm-8">
+                    <div class="col-md-12 form-group">
+                        <label for="songname">Sång</label>
+                        <input type="text" placeholder="ex. Fångad av en stormvind" class="form-control" id="songname">
                     </div>
-                    <div class="col-md-12">
-                      <label for="artistname">Artist</label>
-                        <input type="text" placeholder="ex. Calorla" class="form-control" id="artistname" required="true">
+                    <div class="col-md-12 form-group">
+                        <label for="artistname">Artist</label>
+                        <input type="text" placeholder="ex. Calorla" class="form-control" id="artistname">
                     </div>
-                    <div class="col-md-12">
-                      <label for="startnbr">Nr</label>
-                        <input type="text" placeholder="ex. 29" class="form-control" id="startnbr" required="true">
+                    <div class="col-md-12 form-group">
+                        <label for="startnbr">Nr</label>
+                        <input type="text" placeholder="ex. 29" class="form-control" id="startnbr">
                     </div>
                 </div>
-
-                <div class="col-md-6 col-md-offset-3">
-                    <br><br>
-                    <button type="submit" class="btn btn-primary col-md-12 form-control" id="submit">lägg till</button>
+                <div class="col-md-5 row">
+                    <br>
+                    <button type="submit" class="btn btn-primary col-md-10 form-control" id="submit">Lägg till</button>
                 </div>
             </form>
         </div>
         <div class="row">
             <div class="col-md-6">
-              <br>
-                <button id="submitpoints" type="button" class="btn btn-primary col-sm-8" name="button">Skicka allt!</button>
+                <br>
+                <button id="submitpoints" type="button" class="btn btn-warning col-sm-6" name="button">Skicka allt!</button><br><br>
             </div>
         </div>
         <div id="songlist">
