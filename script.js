@@ -141,3 +141,13 @@ function updatePage() {
     temp = JSON.parse(localStorage.getItem("songs"));
     updateList(temp);
 }
+function editPoint(song, points){
+  temp2 = JSON.parse(localStorage.getItem("songs"));
+  for (var i = 0; i < temp2.length; i++) {
+    if (song == temp2[i].songname){
+      temp2[i].points = points;
+      localStorage.setItem("songs", JSON.stringify(temp2));
+      console.log("uppdaterade " + temp2[i].songs + " poäng till " + points);
+    }
+  }
+}
