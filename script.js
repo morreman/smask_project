@@ -1,5 +1,5 @@
 var songs = [];
-
+var enterbutton = [];
 $("#submit").click(function(e) {
     addSongToJson();
     songlist = JSON.parse(localStorage.getItem("songs"));
@@ -11,7 +11,9 @@ $("#submitpoints").click(function(e) {
     songlist = JSON.parse(localStorage.getItem("songs"));
     submitPoints(songlist);
     $(".hint").hide();
-
+    for(var i = 0; i < enterbutton.length; i++){
+      enterbutton[i].fadeIn(1000);
+    }
     e.preventDefault();
 });
 
@@ -100,18 +102,18 @@ addEventListener("click", function(e) {
         }
         localStorage.setItem("songs", JSON.stringify(updateList));
     } else if (event.target.type == 'reset') {
-        console.log(event.target.parentNode.childNodes[6]); //
-        var textfield = event.target.parentNode.childNodes[7].firstChild.value;//
+        console.log(event.target.parentNode.childNodes[8]); //
+        var textfield = event.target.parentNode.childNodes[7].firstChild.value; //
         var clicked_song_points = textfield; // ANTAL POÄNG.
         var temp = event.target.parentNode;
         var lbl = $(temp).children().last();
-
+        enterbutton.push(lbl);
         var clicked_song = event.target.id;
         for (var i = 0; i < updateList.length; i++) {
             if (clicked_song == updateList[i].artist) {
                 updateList[i].currentpoints = parseInt(clicked_song_points);
-                if (!lbl.html().includes('span')) {
-                    lbl.append('<span class="glyphicon glyphicon-ok"></span>');
+                if (textfield > 0) {
+                    lbl.fadeOut(1000);
                 }
             }
         }
@@ -139,13 +141,14 @@ function updatePage() {
     temp = JSON.parse(localStorage.getItem("songs"));
     updateList(temp);
 }
-function editPoint(song, points){
-  temp2 = JSON.parse(localStorage.getItem("songs"));
-  for (var i = 0; i < temp2.length; i++) {
-    if (song == temp2[i].songname){
-      temp2[i].points = points;
-      localStorage.setItem("songs", JSON.stringify(temp2));
-      console.log("uppdaterade " + temp2[i].songs + " poäng till " + points);
+
+function editPoint(song, points) {
+    temp2 = JSON.parse(localStorage.getItem("songs"));
+    for (var i = 0; i < temp2.length; i++) {
+        if (song == temp2[i].songname) {
+            temp2[i].points = points;
+            localStorage.setItem("songs", JSON.stringify(temp2));
+            console.log("uppdaterade " + temp2[i].songs + " poäng till " + points);
+        }
     }
-  }
 }
