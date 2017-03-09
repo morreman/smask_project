@@ -105,8 +105,6 @@ addEventListener("click", function(e) {
         var clicked_song_points = textfield; // ANTAL POÄNG.
         var temp = event.target.parentNode;
         var lbl = $(temp).children().last();
-        console.log(lbl);
-        // var lbl = event.target.parentNode.childNodes[6];
 
         var clicked_song = event.target.id;
         for (var i = 0; i < updateList.length; i++) {
