@@ -148,7 +148,7 @@ function editPoint(song, points) {
         if (song == temp2[i].songname) {
             temp2[i].points = points;
             localStorage.setItem("songs", JSON.stringify(temp2));
-            console.log("uppdaterade " + temp2[i].songs + " poäng till " + points);
+            console.log("uppdaterade " + song + " poäng till " + points);
         }
     }
 }
