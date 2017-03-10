@@ -1,7 +1,7 @@
 #songdiv{
   font-family: 'Cinzel', serif;
   margin-top: 5px;
-  margin:40px;
+  margin:55px;
   border-radius: 70px 20px 140px 20px;
   background-color: green;
   background-image: url("gold.jpg");
@@ -57,12 +57,15 @@
   color: green;
   font-size: 25px;
 }
+
 .wrapper{
   padding: 10px;
-  background-image: url('logo2.jpg');
+  background-image: url(lila_grade.jpg);
+  background-size: 100% 100%;
+  /*background-image: url('logo2.jpg');
   background-size: 500px 500px;
   background-repeat: no-repeat;
-  background-position: 490px;
+  background-position: 490px;*/
   background-position: fixed;
 }
 
