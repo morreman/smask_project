@@ -36,9 +36,12 @@ $(document).ready(
                 if (songs[0].fadeanimate) {
                     $(".pointdivcur").addClass("animated bounceIn");
                     $(".pointdivfull").addClass("animated bounceIn");
-                    $("#song0").addClass("animated tada");
-                    for (var k = 1; k < songs.length; k++) {
-                      $("#song" + k).addClass("animated shake");
+                    for (var p = 0; p < songs.length; p++) {
+                      if(songs[p].songname == displayed[0]){
+                        $("#song" + p).addClass("animated tada");
+                      }else{
+                        $("#song" + p).addClass("animated shake");
+                      }
                     }
                     songs[0].fadeanimate = false;
 

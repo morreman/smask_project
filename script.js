@@ -75,6 +75,7 @@ function updateList(songlist) {
         $('#songlistsong' + i).css('border-style', 'outset');
         $('#songlistsong' + i).css('margin', '0px');
         $('#songlistsong' + i).css('padding', '20px');
+        $('#songlistsong' + i).css('background-color', 'white');
     }
 
 }

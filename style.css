@@ -1,7 +1,7 @@
 #songdiv{
   font-family: 'Cinzel', serif;
   margin-top: 5px;
-  margin:55px;
+  margin:35px;
   border-radius: 70px 20px 140px 20px;
   background-color: green;
   background-image: url("gold.jpg");
@@ -59,9 +59,8 @@
 }
 
 .wrapper{
-  padding: 10px;
-  background-image: url(lila_grade.jpg);
-  background-size: 100% 100%;
+  /*padding: 10px;
+  /*background-image: url("lila_grade.jpg");
   /*background-image: url('logo2.jpg');
   background-size: 500px 500px;
   background-repeat: no-repeat;
@@ -72,4 +71,7 @@
 .otherInput{
   margin-top: 5px;
   margin-right: 20px;
+}
+body{
+  background-image: url("lila_grade.jpg");
 }
